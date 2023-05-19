@@ -1,0 +1,11 @@
+/*!
+Theme Name: Modern WordPress
+Version: 1.0.0
+*/
+@import './global/index';
+
+body {
+	main {
+		@import './partials/gutenberg';
+	}
+}

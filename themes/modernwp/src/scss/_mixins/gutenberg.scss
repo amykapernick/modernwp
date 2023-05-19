@@ -1,0 +1,17 @@
+@mixin gutenberg_backgrounds {
+	@each $colour_name,
+		$hex in var.$colours_list {
+		&.has-#{$colour_name}-background-color {
+			--background_colour: #{$hex};
+		}
+	}
+}
+
+@mixin gutenberg_text_colours {
+	@each $colour_name,
+		$hex in var.$colours_list {
+		&.has-#{$colour_name}-color {
+			--text_colour: #{$hex};
+		}
+	}
+}

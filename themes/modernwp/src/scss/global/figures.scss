@@ -1,0 +1,55 @@
+figure {
+	display: flex;
+	flex-wrap: wrap;
+
+	&.wp-block-embed {
+		&.is-provider-youtube,
+		&.is-provider-vimeo {
+			@extend %video_embed;
+		}
+
+		&.is-provider-soundcloud {
+			@extend %audio_embed;
+		}
+
+		.wp-block-embed__wrapper {
+			width: 100%;
+		}
+	}
+
+	a {
+		display: block;
+	}
+
+	figcaption {
+		width: 100%;
+	}
+
+	&.alignright {
+		justify-content: flex-end;
+	}
+
+	&.aligncenter {
+		justify-content: center;
+	}
+}
+
+@media(min-width: 50em) {
+	figure {
+		&.wp-block-embed {
+			&.is-provider-soundcloud {
+				max-width: max_width(100vw, 120px, 8);
+			}
+		}
+	}
+}
+
+@media(min-width: 50em) {
+	figure {
+		&.wp-block-embed {
+			&.is-provider-soundcloud {
+				max-width: max_width(var.$max_content, 0, 8);
+			}
+		}
+	}
+}

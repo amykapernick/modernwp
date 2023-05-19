@@ -1,0 +1,44 @@
+.body {
+	--page_colour: #{var.$colours_navy};
+}
+
+.event_feed {
+	background: var.$colours_grey_light_warm;
+}
+
+.festival {
+	--page_colour: #{var.$colours_green};
+}
+
+.btt {
+	@include mixins.buttons(var.$colours_blue, var.$colours_white, var.$colours_blue);
+
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	padding: 5px;
+	font-size: 2em;
+}
+
+.main {
+	padding: 0 20px;
+	clear: both;
+}
+
+@media(min-width: 50em) {
+	.main {
+		padding: 0 60px;
+	}
+
+	.btt {
+		right: 50px;
+		bottom: 50px;
+	}
+}
+
+@media(min-width: 60em) {
+	.main {
+		max-width: var.$max_width;
+		margin: 0 auto;
+	}
+}

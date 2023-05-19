@@ -1,0 +1,90 @@
+%content {
+	>* {
+		&:last-child {
+			&:not([class*='wp-block']):not(.woocommerce) {
+				margin-bottom: 60px;
+			}
+		}
+	}
+
+	li {
+		margin-bottom: 0.5em;
+	}
+
+	p,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	blockquote,
+	hr,
+	ul,
+	details,
+	aside,
+	.wp-block-image {
+		&+.wp-block {
+			margin-top: 60px;
+		}
+
+		&+link,
+		&+style {
+			&+.wp-block {
+				margin-top: 60px;
+			}
+		}
+	}
+}
+
+@media(min-width: 50em) {
+	%content {
+		min-height: 400px;
+		clear: both;
+
+		p,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		blockquote,
+		hr,
+		ul,
+		details,
+		aside,
+		.wp-block-image {
+			max-width: max_width(100vw, 120px, 8);
+		}
+
+		hr {
+			margin-left: 0;
+		}
+
+		>* {
+			&:last-child {
+				&:not([class*='wp-block']):not(.woocommerce) {
+					margin-bottom: 120px;
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: var.$max_width) {
+	%content {
+		p,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		blockquote,
+		hr,
+		ul,
+		details,
+		aside,
+		.wp-block-image {
+			max-width: max_width(var.$max_content, 0, 8);
+		}
+	}
+}

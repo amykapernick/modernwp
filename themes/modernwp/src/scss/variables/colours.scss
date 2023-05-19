@@ -1,0 +1,32 @@
+$purple_bright: #CE76DB;
+$purple: #9B8ADC;
+$navy: #7294FA;
+$blue: #4A9AEA;
+$green: #64ad66;
+$red: #FF697C;
+$pink: #D976AF;
+$orange: #f78d2b;
+$yellow: #ffce03;
+$white: #f5f0f0;
+$black: #0d0d0d;
+$background: #f7f0eb;
+$neutral: $black;
+$error: $red;
+$success: $green;
+$warning: $orange;
+
+// Colours Object
+$list: (
+	'purple_bright': $purple_bright,
+	'purple': $purple,
+	'navy': $navy,
+	'blue': $blue,
+	'green': $green,
+	'red': $red,
+	'pink': $pink,
+	'orange': $orange,
+	'yellow': $yellow,
+	'white': $white,
+	'black': $black,
+	'background': $background
+);

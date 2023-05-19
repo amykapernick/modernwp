@@ -1,0 +1,117 @@
+.wp-block-columns.wp-block-columns {
+	display: block;
+	margin-bottom: 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.wp-block-column.wp-block-column {
+		margin: 0;
+	}
+}
+
+.wp-block-buttons {
+	--background_colour: #{var.$colours_blue};
+	--text_colour: #{var.$colours_white};
+
+	justify-content: center;
+	margin: 0 -10px;
+
+	>.wp-block-button.wp-block-button {
+		margin: 10px;
+	}
+
+	.wp-block-button__link {
+		@include mixins.overline_text('s');
+
+		display: inline-block;
+		padding: 10px 20px;
+		border: 2px solid var.$colours_blue;
+		border-radius: 0;
+		background: var.$colours_blue;
+		color: var.$colours_white;
+		font-weight: 600;
+		line-height: 1;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover {
+			background: var.$colours_white;
+			color: var.$colours_blue;
+		}
+
+		&.has-text-color {
+			@include mixins.gutenberg_text_colours;
+
+			color: var(--text_colour);
+
+			&:hover {
+				color: var(--background_colour);
+			}
+		}
+
+		&.has-background {
+			@include mixins.gutenberg_backgrounds;
+
+			border-color: var(--background_colour);
+			background-color: var(--background_colour);
+
+			&.has-white-background-color {
+				border-color: var(--text_colour);
+			}
+
+			&:hover {
+				background-color: var(--text_colour);
+			}
+		}
+	}
+
+	.wp-block-button {
+		&.is-style-outline {
+			.wp-block-button__link {
+				border-color: var.$colours_blue;
+				background: none;
+				color: var.$colours_blue;
+
+				&:hover {
+					background: var.$colours_blue;
+					color: var.$colours_white;
+				}
+
+				&.has-text-color {
+					color: var(--text_colour);
+
+					&:hover {
+						background: var(--background_colour);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: 50em) {
+	.wp-block-columns.wp-block-columns {
+		display: flex;
+		width: calc(100% + 40px);
+		margin: 0 -20px;
+
+		.wp-block-column.wp-block-column {
+			flex-basis: 42%;
+
+			margin: 0 20px;
+
+			@include mixins.child_reset;
+		}
+
+		h1,
+		h2 {
+			text-align: left;
+		}
+
+		.wp-block-buttons {
+			justify-content: flex-start;
+		}
+	}
+}

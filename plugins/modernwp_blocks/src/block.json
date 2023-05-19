@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "modernwp/banner",
+	"version": "0.1.0",
+	"title": "Banner Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example static block scaffolded with Create Block tool.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "modernwp",
+	"editorScript": "file:./index.js"
+}

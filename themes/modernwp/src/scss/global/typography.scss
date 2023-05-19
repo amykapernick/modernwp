@@ -1,0 +1,158 @@
+body {
+	color: var.$colours_neutral;
+	font-family: var.$font_main;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.5;
+
+	@media(min-width: 70em) {
+		font-size: 18px;
+	}
+}
+
+a {
+	color: var.$colours_purple_bright;
+	font-weight: 500;
+	text-decoration: underline;
+
+	@include mixins.gutenberg_text_colours;
+
+	svg {
+		width: auto;
+		height: 1em;
+		color: inherit;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+strong {
+	font-weight: 800;
+}
+
+em {
+	font-style: italic;
+}
+
+p {
+	@include mixins.gutenberg_text_colours;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: var.$colours_neutral;
+
+	a {
+		color: inherit;
+		font-weight: inherit;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&.has-text-color {
+		@include mixins.gutenberg_text_colours;
+
+		color: var(--text_colour);
+	}
+}
+
+h1 {
+	@include mixins.heading_text('h1');
+
+	font-weight: 800;
+}
+
+h2 {
+	@include mixins.heading_text('h2');
+
+	font-weight: 700;
+}
+
+h3 {
+	@include mixins.heading_text('h3');
+}
+
+h4 {
+	@include mixins.heading_text('h4');
+}
+
+h5 {
+	@include mixins.heading_text('h5');
+}
+
+h6 {
+	@include mixins.heading_text('h6');
+}
+
+nav {
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		@include mixins.invert_link;
+
+		display: block;
+		color: inherit;
+	}
+}
+
+blockquote {
+	@include mixins.child_reset;
+	@include mixins.blockquote_text;
+}
+
+.btn,
+button,
+input[type='submit'] {
+	@include mixins.buttons(var.$colours_blue, var.$colours_white, var.$colours_blue);
+
+	svg {
+		height: 1em;
+	}
+}
+
+ul {
+	&.arrows_list {
+		@include mixins.list_reset_internal;
+
+		margin-bottom: 120px;
+
+		li {
+			position: relative;
+			margin: 12px 0;
+			padding-left: 70px;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0.25em;
+				left: 0;
+				width: 46px;
+				height: 1em;
+				background: url(var.$img + 'long_arrow_colour.svg');
+				background-repeat: no-repeat;
+				background-position: right center;
+				background-size: auto 100%;
+			}
+		}
+
+		a {
+			@include mixins.invert_link;
+
+			color: inherit;
+		}
+	}
+}
